@@ -12,21 +12,21 @@ function PanduanPage() {
     return(
         <>
         <Navbar/>
-        <div style={{backgroundImage: `url(${bgpanduanpage})`}} className="bg-center bg-cover bg-no-repeat w-[100vw] h-[500vh] mt-[75px] md:mt-[90px] overflow-hidden w-">
+        <div style={{backgroundImage: `url(${bgpanduanpage})`}} className="bg-center bg-cover bg-no-repeat w-[100vw] pb-10 mt-[75px] md:mt-[90px] overflow-hidden w-">
             <div className='w-[90%] mx-auto'>
-                <h1 className='mx-auto my-4 text-2xl font-bold text-[#374f52]'>Panduan</h1>
+                <h1 className='mx-auto my-4 text-3xl font-bold text-[#374f52]'>Panduan</h1>
                 <p className='text-justify'>{desc.maindesc1}</p>
                 <p className='text-justify'>{desc.maindesc2}</p>
                 <p className='text-justify'>{desc.maindesc3}</p>
                 
-                <h1 className='mx-auto my-4 text-2xl font-bold text-[#374f52]'>Struktur Forum</h1>
+                <h1 className='mx-auto mt-20 mb-4 text-3xl font-bold text-[#374f52]'>Struktur Forum</h1>
                 <ol>
-                    <li className='mx-3 my-2 text-justify'>{desc.kategori}</li>
-                    <li className='mx-3 my-2 text-justify'>{desc.topik}</li>
-                    <li className='mx-3 my-2 text-justify'>{desc.pencarian}</li>
+                    <li className=' my-2 text-justify'>- {desc.kategori}</li>
+                    <li className=' my-2 text-justify'>- {desc.topik}</li>
+                    <li className='my-2 text-justify'>- {desc.pencarian}</li>
                 </ol>
 
-                <h1 className='mx-auto my-4 text-2xl font-bold text-[#374f52]'>Etika & Peraturan</h1>
+                <h1 className='mx-auto mt-20 mb-4 text-3xl font-bold text-[#374f52]'>Etika & Peraturan</h1>
                 <ol>
                     <h2 className='ml-3 font-bold text-[#374f52]'>1. Saling Menghormati dan Menggunakan Bahasa yang Pantas</h2>
                     <li className='mx-3 mb-3 text-justify'>{desc.etika1}</li>
@@ -53,7 +53,7 @@ function PanduanPage() {
                     <li className='mx-3 mb-3 text-justify'> {desc.etika8}</li>
                 </ol>
 
-                <h1 className='mx-auto my-4 text-2xl font-bold text-[#374f52]'>Fitur Pendukung</h1>
+                <h1 className='mx-auto mt-20 mb-4 text-3xl font-bold text-[#374f52]'>Fitur Pendukung</h1>
                 <ol>
                     <h2 className='ml-3 font-bold text-[#374f52]'>1. Anonimitas</h2>
                     <li className='mx-3 mb-3 text-justify'>{desc.fitur1}</li>

@@ -13,11 +13,11 @@ Content-Type: application/json
     "email":"wwaterr313@gmail.com",
     "password":"icikiwir",
     "confPassword":"icikiwir",
-    "role":"admin"
+    "role":"user"
 }
 
 ###
-PATCH http://localhost:5000/users/86ebbe3d-f24a-4fbf-99bf-a17c68123e5c
+PATCH http://localhost:5000/users/df4d19e8-d8d1-4dce-ad40-67e6df500ee4
 Content-Type: application/json
 
 {
@@ -26,5 +26,23 @@ Content-Type: application/json
     "email":"sigmasigma@gmail.com",
     "password":"icikiwir",
     "confPassword":"icikiwir",
-    "role":"admin"
+    "role":"user"
 }
+
+###
+DELETE http://localhost:5000/users/df4d19e8-d8d1-4dce-ad40-67e6df500ee4
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"wwaterr313@gmail.com",
+    "password":"icikiwir"
+}
+
+###
+GET http://localhost:5000/me
+
+###
+DELETE http://localhost:5000/logout

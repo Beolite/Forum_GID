@@ -12,7 +12,7 @@ function Navbar() {
 
   const [open,setOpen] = useState(false);
   return (
-    <nav id="header" className="overflow-x-hidden bg-gradient-to-b from-[#214f5d] to-[#264c6f] md:h-[90px] h-[75px] top-0 w-screen flex justify-between fixed overflow-hidden">
+    <nav id="header" className="overflow-x-hidden bg-gradient-to-b from-[#214f5d] to-[#264c6f] md:h-[90px] h-[75px] top-0 w-screen flex justify-between fixed overflow-hidden shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
 
         <div id="forum-title" className="text-[#ede8f5] w-[25%] md:w-[15%] my-auto ">
         <img className='max-w-[100px] md:max-w-[200px]' src={logo}></img> 
