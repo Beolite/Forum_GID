@@ -17,7 +17,7 @@ Content-Type: application/json
 }
 
 ###
-PATCH http://localhost:5000/users/df4d19e8-d8d1-4dce-ad40-67e6df500ee4
+PATCH http://localhost:5000/users/69571d9f-a27c-48f8-ab0e-bfc368c1b5ae
 Content-Type: application/json
 
 {
@@ -40,6 +40,16 @@ Content-Type: application/json
     "email":"wwaterr313@gmail.com",
     "password":"icikiwir"
 }
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"sigmasigma@gmail.com",
+    "password":"icikiwir"
+}
+
 
 ###
 GET http://localhost:5000/me

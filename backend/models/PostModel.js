@@ -13,7 +13,7 @@ const Post = db.define('post',{
             notEmpty:true
         }
     },
-    username:{
+    title:{
         type:DataTypes.STRING,
         allowNull:false,
         validate:{
