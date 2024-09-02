@@ -56,3 +56,19 @@ GET http://localhost:5000/me
 
 ###
 DELETE http://localhost:5000/logout
+
+//post
+###
+GET http://localhost:5000/post
+
+###
+POST http://localhost:5000/post
+Content-Type: application/json
+
+{
+    "title":"rizz of the skibidi",
+    "content":"rizzlord of ohio"
+}
+
+###
+DELETE http://localhost:5000/post/7b7e4685-9944-4b3d-b930-3481806c3420

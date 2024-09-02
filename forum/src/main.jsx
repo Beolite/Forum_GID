@@ -10,6 +10,7 @@ import App from "./App.jsx"
 import LoginPage from "./pages/LoginPageItems/LoginPage.jsx";
 import PanduanPage from "./pages/PanduanPage/PanduanPage.jsx";
 import RegisterPage from "./pages/LoginPageItems/RegisterPage.jsx";
+import ForumPage from "./pages/ForumPageItems/ForumPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/panduan",
     element: <PanduanPage/>,
+  },
+  {
+    path: "/forum",
+    element: <ForumPage/>,
   }
   
 ]);
