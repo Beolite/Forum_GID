@@ -1,4 +1,4 @@
-import Navbar from '../navbar/Navbar'
+import NavbarOld from '../navbar/navy'
 import Background from '../assets/background.png'
 import { Form } from "react-router-dom";
 import Background2 from '../assets/background2.png'
@@ -6,12 +6,13 @@ import innerbg from '../assets/login-bg-inner.png'
 import outerbg from '../assets/login-bg-outer.png'
 import { useState } from 'react';
 import InputComponent from './InputComponent';
+import Navbar from '../navbar/Navbar'
 
 function LoginPage() {
     return(
         <>
         <Navbar/>
-        <div style={{backgroundImage: `url(${outerbg})`}} className="overflow-x-hidden w-[100vw] h-[100vh] bg-gradient-to-b from-[#92dcc9] via-[#8cd4bc] to-[#85ccab]   mt-[75px] md:mt-[90px] overflow-hidden">
+        <div style={{backgroundImage: `url(${outerbg})`}} className="overflow-x-hidden w-[100vw] h-[100vh] bg-gradient-to-b from-[#92dcc9] via-[#8cd4bc] to-[#85ccab] mt-12 overflow-hidden">
             
             <div style={{backgroundImage: `url(${innerbg})`}} className="flex bg-gradient-to-b from-[#20325e] via-[#264c6f] to-[#2b6a7d] sm:w-[600px] sm:h-[600px] w-[95%] h-[90%] my-[15px] mx-auto overflow-hidden justify-center items-center rounded-lg shadow-lg shadow-[#576264]">
                 <div className='rounded-tr-[46px] rounded-bl-[46px] border-white border-2 w-[360px] py-8 align-middle justify-center overflow-hidden'>

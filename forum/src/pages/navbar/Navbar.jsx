@@ -1,9 +1,18 @@
 import Dropdown from "./Dropdown";
 import { useState } from 'react';
-import logo from "../assets/logoatas.png";
+import logo from "../assets/logoatas2.png";
 import icon from '../assets/icon.png';
 import Iconlarge from "./iconlarge";
 import { Link } from "react-router-dom";
+import LoginPost from "./LoginPost";
+import React, { Component } from 'react';
+import {
+  Bars3Icon,
+  MagnifyingGlassIcon,
+  UserIcon,
+} from "@heroicons/react/24/outline";
+
+
 
 
 const gradient="bg-gradient-to-t from-[#214f5d] to-[#20415f]";
@@ -12,26 +21,30 @@ function Navbar() {
 
   const [open,setOpen] = useState(false);
   return (
-    <nav id="header" className="overflow-x-hidden bg-gradient-to-b from-[#214f5d] to-[#264c6f] md:h-[90px] h-[75px] top-0 w-screen flex justify-between fixed overflow-hidden shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
-
-        <div id="forum-title" className="text-[#ede8f5] w-[25%] md:w-[15%] my-auto ">
-        <img className='max-w-[100px] md:max-w-[200px]' src={logo}></img> 
+    <div id="header" className="overflow-x-hidden bg-gradient-to-b from-[#214f5d] to-[#264c6f] h-12 top-0 w-screen flex align-middle justify-between fixed overflow-hidden shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
+        
+        {/* setting,logo,and name */}
+        <div id="logo-title-container" className="my-auto align-middle flex">
+            <div id="samudra-settings" className="flex align-middle w-10 h-10 my-auto ml-6">
+              <Bars3Icon className="text-stone-100 my-auto size-8"/>
+            </div>
+            <div id="samudra-logo" className="w-10 h-10 my-auto"><img src={logo}></img></div>
+            <p className="my-auto text-xl mx-2 text-[#8fd7b7] font-medium text-2xl ">Samudra</p>
         </div>
 
-        
-        <div id="header-settings" className="h-[100%] w-[35%] sm:w-[0] md:w-[15%] flex justify-around ">
-          <Link to="/login" className="sm:hidden my-auto mx-[10px] bg-[#183a45] active:bg-[#0f172a] active:-translate-y-1 transition-transform rounded-[10%] px-[12px] shadow-md font-semibold text-[#ede8f5]">log in</Link>
-          <div className="sm:hidden my-auto mx-[10px]">
-            <div id="menuTrigger" className="active:-translate-y-1 transition-transform" onClick={() =>{setOpen(!open)}}>
-              <img src={icon} width='25px'></img>
-            </div>
-
-            <div className={`${open? 'transition-opacity opacity-0' : 'transition-opacity opacity-100 '}`} ><Dropdown/></div>
+        {/* search */}
+        <div id="search" className="bg-stone-100 overflow-hidden w-64 lg:w-[500px] h-9 my-auto align-middle hidden lg:flex justify-between rounded-lg">
+          <input type="text" className="text-xl font-light my-auto text-gray-600 mx-2 bg-stone-100 h-[100%] outline-none pr-48 border-b-zinc-100" placeholder="Search Something..."></input>
+          <div className="hover:bg-black hover:bg-opacity-10 flex align-middle pl-4">
+            <MagnifyingGlassIcon className="text-gray-600 mr-4 my-auto size-8"/>
           </div>
-        </div>  
-        <Iconlarge/>    
+        </div>
 
-    </nav>
+        {/* login and post */}
+        <LoginPost/>
+
+
+    </div>
   )
 }
 

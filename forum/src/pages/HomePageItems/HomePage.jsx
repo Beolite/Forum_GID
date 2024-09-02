@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import NavbarOld from '../navbar/navy'
 import Navbar from '../navbar/Navbar'
 import Background from '../assets/background.png'
 import Card from './Card'
@@ -25,7 +26,7 @@ function HomePage() {
   return (
       <>
       <Navbar/>
-      <div className='bg-slate-200 w-[100vw] lg:h-[100vh] lg:mt-[90px]'>
+      <div className='bg-slate-200 w-[100vw] lg:h-[100vh] lg:mt-12'>
         <div id="gambar" className="overflow-hidden aspect-w-6 aspect-h-9 bg-red-500 mt-[75px] lg:hidden lg:overflow-hidden">
           <img class='object-cover h-[100%] w-[100%]' src={Background}/>
         </div>
@@ -36,19 +37,19 @@ function HomePage() {
           <Card cardTitle="Panduan" cardDesc={panduanDesc} bg={background3}/>
         </div>
 
-        <div id="gambarbesar" style={{backgroundImage:`url(${Background2})`}} className="align-bottom flex hidden mt-[75px] h-[100vh] w-[100vw] lg:block lg:overflow-hidden bg-cover bg-no-repeat bg-center">
-          <div className='mt-4 flex h-64 w-[100%] justify-between'>
-          <img className='ml-5 transform scale-75 hover:scale-100 transition-transform duration-500' src={logo2}></img>
-          <div className='w-[70%] h-[100%] mr-12 text-xl font-semibold text-slate-700'>
-          <h1 className='text-3xl my-8 font-bold hover:text-slate-950'>Samudra</h1>
-          <p className='hover:text-[#2f5443]'>{paragraf1}</p>  
-          </div>
-          </div>
-          <div className=' w-[95%] h-64 mx-auto mt-20 flex justify-between'>
-            <Cardwide bg={background1} title="Forum" desc={forumDesc}/>
-            <Cardwide bg={background2} title="Edukasi" desc={edukasiDesc}/>
-            <Cardwide linkto="/panduan" bg={background3} title="Panduan" desc={panduanDesc}/>
-          </div>
+        <div id="gambarbesar" style={{backgroundImage:`url(${Background2})`}} className="align-bottom flex hidden mt-12 h-[100vh] w-[100vw] lg:block lg:overflow-hidden bg-cover bg-no-repeat bg-center">
+          <div className=' flex h-64 w-[100%] justify-between'>
+            <img className='ml-5 transform scale-75 hover:scale-100 transition-transform duration-500' src={logo2}></img>
+            <div className='w-[70%] h-[100%] mr-12 text-xl font-semibold text-slate-700'>
+            <h1 className='text-3xl my-8 font-bold hover:text-slate-950'>Samudra</h1>
+            <p className='hover:text-[#2f5443]'>{paragraf1}</p>  
+            </div>
+            </div>
+            <div className=' w-[95%] h-64 mx-auto mt-20 flex justify-between'>
+              <Cardwide bg={background1} title="Forum" desc={forumDesc}/>
+              <Cardwide bg={background2} title="Edukasi" desc={edukasiDesc}/>
+              <Cardwide linkto="/panduan" bg={background3} title="Panduan" desc={panduanDesc}/>
+            </div>
         </div>
 
         <Footer/>

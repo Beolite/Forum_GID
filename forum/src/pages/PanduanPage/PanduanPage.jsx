@@ -1,3 +1,4 @@
+import NavbarOld from '../navbar/navy'
 import Navbar from '../navbar/Navbar'
 import Background from '../assets/background.png'
 import { Form } from "react-router-dom";
@@ -12,7 +13,7 @@ function PanduanPage() {
     return(
         <>
         <Navbar/>
-        <div style={{backgroundImage: `url(${bgpanduanpage})`}} className="bg-center bg-cover bg-no-repeat w-[100vw] pb-10 mt-[75px] md:mt-[90px] overflow-hidden w-">
+        <div style={{backgroundImage: `url(${bgpanduanpage})`}} className="bg-center bg-cover bg-no-repeat w-[100vw] pb-10 mt-12 overflow-hidden">
             <div className='w-[90%] mx-auto'>
                 <h1 className='mx-auto my-4 text-3xl font-bold text-[#374f52]'>Panduan</h1>
                 <p className='text-justify'>{desc.maindesc1}</p>
