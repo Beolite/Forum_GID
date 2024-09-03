@@ -1,4 +1,4 @@
-import NavbarOld from '../navbar/navy'
+
 import Navbar from '../navbar/Navbar'
 import Background from '../assets/background.png'
 import { Form } from "react-router-dom";

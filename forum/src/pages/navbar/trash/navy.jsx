@@ -1,8 +1,8 @@
-import Dropdown from "./Dropdown";
+import Dropdown from "./trash/Dropdown";
 import { useState } from 'react';
 import logo from "../assets/logoatas.png";
 import icon from '../assets/icon.png';
-import Iconlarge from "./iconlarge";
+import Iconlarge from "../Iconlarge";
 import { Link } from "react-router-dom";
 
 
