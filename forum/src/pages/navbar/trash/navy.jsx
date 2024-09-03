@@ -1,4 +1,4 @@
-import Dropdown from "./trash/Dropdown";
+import Dropdown from "./Dropdown";
 import { useState } from 'react';
 import logo from "../assets/logoatas.png";
 import icon from '../assets/icon.png';

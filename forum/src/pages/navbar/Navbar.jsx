@@ -22,6 +22,7 @@ function Navbar() {
 
   const [openSidebar,setOpenSidebar] = useState(true);
   return (
+    <>
     <div id="header" className="overflow-x-hidden bg-gradient-to-b from-[#214f5d] to-[#264c6f] h-12 top-0 w-screen flex align-middle justify-between fixed overflow-hidden shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
         
         {/* setting,logo,and name */}
@@ -34,7 +35,6 @@ function Navbar() {
             <div id="samudra-logo" className="w-10 h-10 my-auto"><img src={logo}></img></div>
             <p className="my-auto text-xl mx-2 text-[#8fd7b7] font-medium text-2xl ">Samudra</p>
         </div>
-        <div className={`${!openSidebar? 'opacity-0 transition-opacity' : 'opacity-100 transition-opacity'}`} ><Sidebar /></div>
 
         {/* search */}
         <div id="search" className="bg-stone-100 overflow-hidden w-64 lg:w-[500px] h-9 my-auto align-middle hidden lg:flex justify-between rounded-lg">
@@ -49,6 +49,7 @@ function Navbar() {
 
 
     </div>
+    </>
   )
 }
 

@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import {
+  BrowserRouter,
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
@@ -11,33 +12,20 @@ import LoginPage from "./pages/LoginPageItems/LoginPage.jsx";
 import PanduanPage from "./pages/PanduanPage/PanduanPage.jsx";
 import RegisterPage from "./pages/LoginPageItems/RegisterPage.jsx";
 import ForumPage from "./pages/ForumPageItems/ForumPage.jsx";
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { store } from './app/store';
+import axios from "axios";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App/>,
-  },
-  {
-    path: "/login",
-    element: <LoginPage/>,
-  },
-  {
-    path: "/register",
-    element: <RegisterPage/>,
-  },
-  {
-    path: "/panduan",
-    element: <PanduanPage/>,
-  },
-  {
-    path: "/forum",
-    element: <ForumPage/>,
-  }
-  
-]);
+axios.defaults.withCredentials = true;
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
