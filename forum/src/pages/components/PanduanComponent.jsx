@@ -1,20 +1,17 @@
 
-import Navbar from '../navbar/Navbar'
+import Navbar from '../components/Navbar'
 import Background from '../assets/background.png'
 import { Form } from "react-router-dom";
 import Background2 from '../assets/background2.png'
 import innerbg from '../assets/login-bg-inner.png'
 import outerbg from '../assets/login-bg-outer.png'
 import { useState } from 'react';
-import desc from './desc/desc.json';
+import desc from './desc.json'
 import bgpanduanpage from '../assets/bgpanduanpage.png'
-import NavbarHomepage from '../navbar/NavbarHomepage';
 
-function PanduanPage() {
+function PanduanComponent() {
     return(
-        <>
-        <NavbarHomepage/>
-        <div style={{backgroundImage: `url(${bgpanduanpage})`}} className="bg-center bg-cover bg-no-repeat w-[100vw] pb-10 mt-12 overflow-hidden">
+        <div style={{backgroundImage: `url(${bgpanduanpage})`}} className="bg-center bg-cover bg-no-repeat w-[100%] pb-10 mt-12 overflow-hidden">
             <div className='w-[90%] mx-auto'>
                 <h1 className='mx-auto my-4 text-3xl font-bold text-[#374f52]'>Panduan</h1>
                 <p className='text-justify'>{desc.maindesc1}</p>
@@ -82,8 +79,7 @@ function PanduanPage() {
                 
             </div>
         </div>
-        </>
     )
 }
 
-export default PanduanPage
+export default PanduanComponent

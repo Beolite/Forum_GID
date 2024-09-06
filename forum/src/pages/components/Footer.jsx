@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import logo from "../assets/logoatas.png";
-import icon from '../assets/icon.png';
 import { Link } from "react-router-dom";
 
 

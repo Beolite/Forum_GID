@@ -27,10 +27,10 @@ const settingsIcon = <AdjustmentsHorizontalIcon className='size-4 ml-3 my-auto'/
 const logoutIcon = <ArrowRightStartOnRectangleIcon className='size-4 ml-3 my-auto'/>
 const arrow = <ArrowUpRightIcon className='size-4 ml-3 my-auto'/>
 
-function List(props){
+function ListSidebar(props){
     return(
         <div className='hover:bg-black flex hover:bg-opacity-5 py-1 rounded-lg text-xl font-semibold'>{props.bicons} {props.title}</div>
     )
 }
   
-export default List
+export default ListSidebar

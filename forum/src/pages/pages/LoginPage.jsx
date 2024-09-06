@@ -1,40 +1,40 @@
-import Background from '../assets/background.png'
-import { Form } from "react-router-dom";
-import Background2 from '../assets/background2.png'
+
+
 import innerbg from '../assets/login-bg-inner.png'
 import outerbg from '../assets/login-bg-outer.png'
-import InputComponent from './InputComponent';
-import Navbar from '../navbar/Navbar'
-import NavbarHomepage from '../navbar/NavbarHomepage';
+import InputComponent from '../components/InputComponent.jsx';
+
+import Navbar from '../components/Navbar.jsx';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { LoginUser, reset } from "../../features/authSlice.jsx";
+import { LoginUser, LogOut, reset } from "../../features/authSlice.jsx"
 import React, { useState, useEffect } from "react";
 
 function LoginPage() {
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { user, isError, isSuccess, isLoading, message } = useSelector(
       (state) => state.auth
     );
+  
+    // useEffect(() => {
+    //     if (user || isSuccess) {
+    //         navigate('/forum')
+    //     }
+    //   }, [user, isSuccess, dispatch, navigate]);
+  
+    const Auth = async (e) => {
+      e.preventDefault();
+      dispatch(LoginUser({ email, password }));
+      navigate("/forum");
+    };
 
-    useEffect(() => {
-        if (user || isSuccess) {
-          navigate("/forum");
-        }
-        dispatch(reset());
-      }, [user, isSuccess, dispatch, navigate]);
-    
-      const Auth = (e) => {
-        e.preventDefault();
-        dispatch(LoginUser({ username, password }));
-      };
 
     return(
         <>
-        <NavbarHomepage/>
+        <Navbar/>
         <div style={{backgroundImage: `url(${outerbg})`}} className="overflow-x-hidden w-[100vw] h-[100vh] bg-gradient-to-b from-[#92dcc9] via-[#8cd4bc] to-[#85ccab] mt-12 overflow-hidden">
             
             <div style={{backgroundImage: `url(${innerbg})`}} className="flex bg-gradient-to-b from-[#20325e] via-[#264c6f] to-[#2b6a7d] sm:w-[600px] sm:h-[600px] w-[95%] h-[90%] my-[15px] mx-auto overflow-hidden justify-center items-center rounded-lg shadow-lg shadow-[#576264]">
@@ -44,8 +44,8 @@ function LoginPage() {
                         <form onSubmit={Auth}>
                             {isError && <p className="text-center text-stone-100">{message}</p>}
                             <div className='mt-[6px]'>
-                            <label className='text-[#ede8f5] font-semibold'>Username</label>
-                            <InputComponent itype="text" pholder="username" pvalue={username} pchange={(e) => setUsername(e.target.value)}></InputComponent>
+                            <label className='text-[#ede8f5] font-semibold'>Email</label>
+                            <InputComponent itype="text" pholder="username" pvalue={email} pchange={(e) => setEmail(e.target.value)}></InputComponent>
                             </div>
 
                             <div className='mt-[6px]'>
@@ -54,7 +54,7 @@ function LoginPage() {
                             </div>
 
                             <div className='flex w-[100%] justify-between mt-4 '>
-                                <button className='bg-[#ede8f5] hover:bg-[#92dcc9] transition-transform hover:-translate-y-1 p-[5px] w-[70px] shadow-md rounded-md'>Register</button>
+                                <button className='bg-[#ede8f5] hover:bg-[#92dcc9] transition-transform hover:-translate-y-1 p-[5px] w-[70px] shadow-md rounded-md'>{isLoading ? "Loading..." : "Log Out"}</button>
                                 <button type="submit" className='bg-[#ede8f5] hover:bg-[#92dcc9] transition-transform hover:-translate-y-1 p-[5px] w-[70px] shadow-md rounded-md'>{isLoading ? "Loading..." : "Login"}</button>
                             </div>
                         </form>

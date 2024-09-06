@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import HomePage from './pages/HomePageItems/HomePage'
+import HomePage from './pages/pages/HomePage.jsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LoginPage from "./pages/LoginPageItems/LoginPage.jsx";
-import PanduanPage from "./pages/PanduanPage/PanduanPage.jsx";
-import RegisterPage from "./pages/LoginPageItems/RegisterPage.jsx";
-import ForumPage from "./pages/ForumPageItems/ForumPage.jsx";
+import LoginPage from "./pages/pages/LoginPage.jsx";
+import PanduanPage from "./pages/pages/PanduanPage.jsx";
+import RegisterPage from "./pages/pages/RegisterPage.jsx";
+import ForumPage from "./pages/pages/ForumPage.jsx";
 
 function App() {
 

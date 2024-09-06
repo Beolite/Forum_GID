@@ -1,8 +1,6 @@
-import Dropdown from "./trash/Dropdown";
+
 import { useState } from 'react';
 import logo from "../assets/logoatas2.png";
-import icon from '../assets/icon.png';
-import Iconlarge from "./trash/Iconlarge";
 import { Link } from "react-router-dom";
 import LoginPost from "./LoginPost";
 import React, { Component } from 'react';
@@ -11,7 +9,6 @@ import {
   MagnifyingGlassIcon,
   UserIcon,
 } from "@heroicons/react/24/outline";
-import Sidebar from "./SideBar/Sidebar";
 
 
 
@@ -27,13 +24,15 @@ function Navbar() {
         
         {/* setting,logo,and name */}
         <div id="logo-title-container" className="my-auto align-middle flex cursor-grab">
-            <div id="samudra-settings" className="flex align-middle w-10 h-10 my-auto ml-6" onClick={() =>{setOpenSidebar(!openSidebar)}}>
+            <div id="samudra-settings" className="hidden lg:flex align-middle w-10 h-10 my-auto ml-6" onClick={() =>{setOpenSidebar(!openSidebar)}}>
               <Bars3Icon className="text-stone-100 my-auto size-8"/>
             </div>
             
 
-            <div id="samudra-logo" className="w-10 h-10 my-auto"><img src={logo}></img></div>
-            <p className="my-auto text-xl mx-2 text-[#8fd7b7] font-medium text-2xl ">Samudra</p>
+            <div id="samudra-logo" className="w-10 h-10 my-auto ml-2 lg:ml-0"><img src={logo}>
+            </img>
+            </div>
+            <p className="my-auto text-xl hidden lg:flex mx-2 text-[#8fd7b7] font-medium text-2xl ">Samudra</p>
         </div>
 
         {/* search */}

@@ -1,7 +1,5 @@
-import Dropdown from "./trash/Dropdown";
+import Dropdown from "../navbar/trash/Dropdown";
 import { useState } from 'react';
-import logo from "../assets/logoatas.png";
-import icon from '../assets/icon.png';
 import { Link } from "react-router-dom";
 import {
     Bars3Icon,
@@ -14,13 +12,34 @@ import{
     UserCircleIcon,
     PlusCircleIcon,
 } from "@heroicons/react/24/solid";
+import React, { useEffect } from "react";
 import DropdownUser from "./DropdownUser";
-import DropdownBantukami from "./DropDownBantuKami";
+import DropdownBantukami from "./DropdownBantukami";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { getMe } from "../../features/authSlice";
 
 
 function LoginPost(){
     const [openUser,setOpenUser] = useState(false);
     const [openBantukami,setOpenBantukami] = useState(false);
+
+    const { user } = useSelector((state) => state.auth);
+
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const { isError } = useSelector((state) => state.auth);
+
+    useEffect(() => {
+        dispatch(getMe());
+    }, [dispatch]);
+
+    
+
+    
+
     return(
         <div className="my-auto mr-4 hidden lg:flex">
             <div id="dukung-kami" className="rounded-lg hover:bg-black hover:bg-opacity-10 w-40 h-10 my-auto mx-4 flex align-middle text-stone-100 justify-center cursor-grab" onClick={() =>{setOpenBantukami(!openBantukami)}} >
@@ -30,11 +49,21 @@ function LoginPost(){
             <div className={`${!openBantukami? 'transition-opacity opacity-0' : 'transition-opacity opacity-100 '}`} ><DropdownBantukami/> </div>
 
             <div id="account" className="rounded-lg px-1 text-stone-100 flex justify-center align-middle w-28 h-10 my-auto ml-4 hover:bg-black hover:bg-opacity-10 cursor-grab" onClick={() =>{setOpenUser(!openUser)}} >
-                <p className="text-xl my-auto ">User</p>
-                <UserCircleIcon className="ml-4 mt-1.5 size-8"/>
+                {user && !isError ? 
+                <>
+                <p className="text-xl my-auto overflow-hidden ">
+                {user.name}
+                </p>
+                <UserCircleIcon className="ml-4 mt-1.5 size-8 shrink-0"/>
                 <ChevronDownIcon className="size-4 mt-4 ml-2" />
+                </> 
+                : 
+                <p className="text-xl px-2 my-auto ">
+                Login
+                </p> 
+                }
             </div>
-            <div className={`${!openUser? 'transition-opacity opacity-0' : 'transition-opacity opacity-100 '}`} ><DropdownUser/></div>
+            {user && !isError ? <div className={`${!openUser? 'transition-opacity opacity-0' : 'transition-opacity opacity-100 '}`} ><DropdownUser/></div> : ""}
             
             <div id="bahasa" className="text-stone-100 w-10 h-10 my-auto ml-4 hover:bg-black hover:bg-opacity-10 pl-1 rounded-lg cursor-grab">
                 <GlobeAltIcon className="size-8 mt-1.5"/>
