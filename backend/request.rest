@@ -62,12 +62,15 @@ DELETE http://localhost:5000/logout
 GET http://localhost:5000/post
 
 ###
+GET http://localhost:5000/post/f2fa552f-d4b5-4a13-847a-0f53788b77d1
+
+###
 POST http://localhost:5000/post
 Content-Type: application/json
 
 {
     "title":"rizz of the skibidi",
-    "content":"rizzlord of ohio"
+    "content":"once upon a time there is skibidi in the rizzlandonce upon a time there is edgemaxxing gooner on the gyattlandonce upon a time there is edgemaxxing gooner on the gyattlandonce upon a time there is edgemaxxing gooner on the gyattland"
 }
 
 ###

@@ -19,24 +19,18 @@ export const getPost = async(req, res) => {
 }
 
 export const getPostById = async(req, res) => {
-    try{
-        const post = await Post.findOne({
-            where:{
-                uuid: req.params.id
-            }
-        });
-        if(!post) return res.status(404).json({msg: "Thread tidak ditemukan"});
-        let response;
-        response = await Post.findOne({
+    try {
+        const response = await Post.findOne({
             attributes:['uuid','title','content'],
-            where:{
-                id: post.id
-            },
             include:[{
                 model: User,
                 attributes:['name','email']
-            }]
+            }],
+            where: {
+                uuid: req.params.id
+            }
         });
+        res.status(200).json(response);
     } catch (error) {
         res.status(500).json({msg: error.message});
     }
