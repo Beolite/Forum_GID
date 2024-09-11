@@ -13,7 +13,7 @@ import {
     AdjustmentsHorizontalIcon,
     ArrowRightStartOnRectangleIcon,
     ArrowUpRightIcon,
-    ChatBubbleLeftRightIcon,
+    HomeIcon,
     UserGroupIcon,
     ChatBubbleLeftEllipsisIcon,
 
@@ -23,16 +23,16 @@ import{
     UserCircleIcon,
     PlusCircleIcon,
 } from "@heroicons/react/24/solid";
-const forumIcon = <ChatBubbleLeftRightIcon className='size-8 mx-3 my-auto'/>
+const forumIcon = <HomeIcon className='size-8 mx-3 my-auto'/>
 const ahliIcon = <ChatBubbleLeftEllipsisIcon className='size-8 mx-3 my-auto'/>
 const komunIcon = <UserGroupIcon className='size-8 mx-3 my-auto'/>
 const userIcon = <UserGroupIcon className='size-8 mx-3 my-auto'/>
 
 import ListSidebar from './ListSidebar';
 
-function Sidebar(){
+function Sidebar(props){
     return(
-        <div id="menuContainer" className='text-[#374f52] fixed py-2 px-2 top-12 left-0 h-[100vh] w-[13vw] transition-transform hidden lg:grid'>
+        <div id="menuContainer" className={`${props.sidebartext} ${props.sidebarbg} overflow-y-auto fixed py-2 px-2 top-12 left-0 h-[100vh] w-[13vw] transition-transform hidden lg:grid`}>
             <div className='pb-2'>
                 <ListSidebar bicons={forumIcon} title="Forum"></ListSidebar>
                 <ListSidebar bicons={ahliIcon} title="Tanya Ahli"></ListSidebar>

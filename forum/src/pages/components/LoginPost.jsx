@@ -12,13 +12,14 @@ import{
     UserCircleIcon,
     PlusCircleIcon,
 } from "@heroicons/react/24/solid";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import DropdownUser from "./DropdownUser";
 import DropdownBantukami from "./DropdownBantukami";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../../features/authSlice";
+
 
 
 function LoginPost(){
@@ -32,21 +33,40 @@ function LoginPost(){
     const navigate = useNavigate();
     const { isError } = useSelector((state) => state.auth);
 
+    let bantuRef = useRef();
+
     useEffect(() => {
-        dispatch(getMe());
-    }, [dispatch]);
+        let handler = (e)=>{
+        if(!bantuRef.current.contains(e.target)){
+            setOpenBantukami(false);
+            setOpenUser(false)
+            console.log(bantuRef.current);
+        }      
+        };
+
+        document.addEventListener("mousedown", handler);
+        
+        return() =>{
+        document.removeEventListener("mousedown", handler);
+        }
+
+    });
+
+    
+
+    
 
     
 
     
 
     return(
-        <div className="my-auto mr-4 hidden lg:flex">
-            <div id="dukung-kami" className="rounded-lg hover:bg-black hover:bg-opacity-10 w-40 h-10 my-auto mx-4 flex align-middle text-stone-100 justify-center cursor-grab" onClick={() =>{setOpenBantukami(!openBantukami)}} >
-                <p className="text-xl my-auto ">Dukung Kami</p>
-                <ChevronDownIcon className="size-4 mt-4 ml-2" />
-            </div>
-            <div className={`${!openBantukami? 'transition-opacity opacity-0' : 'transition-opacity opacity-100 '}`} ><DropdownBantukami/> </div>
+        <div ref={bantuRef} className="my-auto mr-4 hidden lg:flex">
+                <div id="dukung-kami" className="rounded-lg hover:bg-black hover:bg-opacity-10 w-40 h-10 my-auto mx-4 flex align-middle text-stone-100 justify-center cursor-grab" onClick={() =>{setOpenBantukami(!openBantukami)}} >
+                    <p className="text-xl my-auto ">Dukung Kami</p>
+                    <ChevronDownIcon className="size-4 mt-4 ml-2" />
+                </div>
+            <div className={`${openBantukami? 'transition-opacity opacity-100' : 'transition-opacity opacity-0 hidden'}`} ><DropdownBantukami/> </div>
 
             <div id="account" className="rounded-lg px-1 text-stone-100 flex justify-center align-middle w-28 h-10 my-auto ml-4 hover:bg-black hover:bg-opacity-10 cursor-grab" onClick={() =>{setOpenUser(!openUser)}} >
                 {user && !isError ? 
@@ -58,12 +78,12 @@ function LoginPost(){
                 <ChevronDownIcon className="size-4 mt-4 ml-2" />
                 </> 
                 : 
-                <p className="text-xl px-2 my-auto ">
+                <Link to="/login" className="text-xl px-2 my-auto ">
                 Login
-                </p> 
+                </Link> 
                 }
             </div>
-            {user && !isError ? <div className={`${!openUser? 'transition-opacity opacity-0' : 'transition-opacity opacity-100 '}`} ><DropdownUser/></div> : ""}
+            {user && !isError ? <div className={`${openUser? 'transition-opacity opacity-100' : 'transition-opacity opacity-0 hidden'}`} ><DropdownUser/></div> : ""}
             
             <div id="bahasa" className="text-stone-100 w-10 h-10 my-auto ml-4 hover:bg-black hover:bg-opacity-10 pl-1 rounded-lg cursor-grab">
                 <GlobeAltIcon className="size-8 mt-1.5"/>

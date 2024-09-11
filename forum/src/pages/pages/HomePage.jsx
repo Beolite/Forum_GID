@@ -14,6 +14,7 @@ import background3 from '../assets/bgedukasi.png'
 import logo2 from '../assets/logosamudra2.png'
 import Footer from '../components/Footer'
 import Layout from './Layout'
+import LayoutHome from './LayoutHome'
 
 const paragraf1 = "Samudra adalah forum tempat siswa-siswi SMA/Sederajat untuk mengekspresikan dan membagikan kondisi kesehatan mental mereka dengan siswa-siswi lainnya.";
 
@@ -26,9 +27,9 @@ function HomePage() {
   
   return (
       <>
-      <Layout>
+      <LayoutHome bgsidebar="bg-white">
         <HomepageComponent></HomepageComponent>
-      </Layout>
+      </LayoutHome>
       </>
   )
 }

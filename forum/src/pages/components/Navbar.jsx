@@ -45,6 +45,7 @@ function Navbar() {
 
         {/* login and post */}
         <LoginPost/>
+        {/* <NavbarMobileComponent/> */}
 
 
     </div>

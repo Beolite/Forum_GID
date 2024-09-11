@@ -22,7 +22,7 @@ const panduanDesc = "Di dalam sini terdapat panduan cara mengidentifikasi bebera
 function HomepageComponent() {
   
   return (
-      <div className='bg-slate-200 lg:w-[100%] lg:h-[100%] lg:mt-12 '>
+      <div className='bg-gradient-to-b from-[#264c6f] to-[#214f5d] lg:w-[100%] lg:h-[100%] lg:mt-12 transition-transform'>
         <div id="gambar" className="overflow-hidden aspect-w-6 aspect-h-9 bg-red-500 mt-[75px] lg:hidden lg:overflow-hidden">
           <img class='object-cover h-[100%] w-[100%]' src={Background}/>
         </div>
@@ -43,7 +43,7 @@ function HomepageComponent() {
             </div>
             <div className=' w-[95%] h-64 mx-auto mt-20 flex justify-between'>
               <Cardwide linkto="/forum" bg={background1} title="Forum" desc={forumDesc}/>
-              <Cardwide bg={background2} title="Edukasi" desc={edukasiDesc}/>
+              <Cardwide linkto="/thread" bg={background2} title="Edukasi" desc={edukasiDesc}/>
               <Cardwide linkto="/panduan" bg={background3} title="Panduan" desc={panduanDesc}/>
             </div>
         </div>
