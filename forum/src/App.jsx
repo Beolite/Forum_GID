@@ -22,7 +22,7 @@ function App() {
           <Route path="/forum" element={<ForumPage />} />
           <Route path="/test" element={<Test/>} />
           <Route path="/post" element={<PostMobile/>} />
-          <Route path="/thread/:id" element={<ThreadPage/>} />
+          <Route path="/forum/:id" element={<ThreadPage/>} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -47,7 +47,7 @@ function ForumComponent(){
           </div>  
           <div className="my-10">
           {post.map((post) => (
-            <ForumComponentPost fkey={post.uuid} ftitle={post.title} fcontent={post.content}/>
+            <ForumComponentPost fto={post.uuid} ftitle={post.title} fcontent={post.content}/>
           ))}
           </div>
         </div>

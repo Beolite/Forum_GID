@@ -23,15 +23,14 @@ import { getMe } from "../../features/authSlice";
 
 
 function LoginPost(){
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const [openUser,setOpenUser] = useState(false);
     const [openBantukami,setOpenBantukami] = useState(false);
 
     const { user } = useSelector((state) => state.auth);
-
-
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const { isError } = useSelector((state) => state.auth);
+    
 
     let bantuRef = useRef();
 
@@ -69,7 +68,7 @@ function LoginPost(){
             <div className={`${openBantukami? 'transition-opacity opacity-100' : 'transition-opacity opacity-0 hidden'}`} ><DropdownBantukami/> </div>
 
             <div id="account" className="rounded-lg px-1 text-stone-100 flex justify-center align-middle w-28 h-10 my-auto ml-4 hover:bg-black hover:bg-opacity-10 cursor-grab" onClick={() =>{setOpenUser(!openUser)}} >
-                {user && !isError ? 
+                {user ? 
                 <>
                 <p className="text-xl my-auto overflow-hidden ">
                 {user.name}
@@ -83,7 +82,7 @@ function LoginPost(){
                 </Link> 
                 }
             </div>
-            {user && !isError ? <div className={`${openUser? 'transition-opacity opacity-100' : 'transition-opacity opacity-0 hidden'}`} ><DropdownUser/></div> : ""}
+            {user ? <div className={`${openUser? 'transition-opacity opacity-100' : 'transition-opacity opacity-0 hidden'}`} ><DropdownUser/></div> : ""}
             
             <div id="bahasa" className="text-stone-100 w-10 h-10 my-auto ml-4 hover:bg-black hover:bg-opacity-10 pl-1 rounded-lg cursor-grab">
                 <GlobeAltIcon className="size-8 mt-1.5"/>

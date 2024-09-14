@@ -7,7 +7,7 @@ import { useState } from 'react';
 function Layout({children}){
     const [openSidebar,setOpenSidebar] = useState(true);
     return(
-        <div className='grid bg-[#8fd7b7] bg-opacity-25 overflow-hidden'>
+        <div className='grid bg-[#8fd7b7] min-h-[100vh] bg-opacity-25 overflow-hidden'>
             
             <Navbar/>
             <div className="w-12 h-12 ml-2 fixed" onClick={() =>{setOpenSidebar(!openSidebar)}}></div>

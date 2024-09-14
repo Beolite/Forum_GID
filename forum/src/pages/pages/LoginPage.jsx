@@ -28,7 +28,7 @@ function LoginPage() {
     const Auth = async (e) => {
       e.preventDefault();
       dispatch(LoginUser({ email, password }));
-      navigate("/forum");
+      navigate(-1);
     };
 
 

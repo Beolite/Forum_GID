@@ -43,3 +43,7 @@ app.use(AuthRoute);
 store.sync();
 
 app.listen(process.env.APP_PORT,() => console.log('Server running correctly...'));
+
+(async()=>{
+    await db.sync();
+})();

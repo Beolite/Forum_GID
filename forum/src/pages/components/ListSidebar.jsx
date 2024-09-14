@@ -29,7 +29,7 @@ const arrow = <ArrowUpRightIcon className='size-4 ml-3 my-auto'/>
 
 function ListSidebar(props){
     return(
-        <Link className='hover:bg-black flex hover:bg-opacity-5 py-1 rounded-lg text-xl font-semibold'>{props.bicons} {props.title}</Link>
+        <Link to={props.lto} className='hover:bg-black flex hover:bg-opacity-5 py-1 rounded-lg text-xl font-semibold'>{props.bicons} {props.title}</Link>
     )
 }
   

@@ -22,7 +22,7 @@ const Post = db.define('post',{
         }
     },
     content :{
-        type:DataTypes.STRING,
+        type:DataTypes.TEXT,
         allowNull:false,
         validate:{
             notEmpty:true,

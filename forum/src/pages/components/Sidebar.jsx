@@ -34,7 +34,7 @@ function Sidebar(props){
     return(
         <div id="menuContainer" className={`${props.sidebartext} ${props.sidebarbg} overflow-y-auto fixed py-2 px-2 top-12 left-0 h-[100vh] w-[13vw] transition-transform hidden lg:grid`}>
             <div className='pb-2'>
-                <ListSidebar bicons={forumIcon} title="Forum"></ListSidebar>
+                <ListSidebar lto="/forum" bicons={forumIcon} title="Forum"></ListSidebar>
                 <ListSidebar bicons={ahliIcon} title="Tanya Ahli"></ListSidebar>
                 <ListSidebar bicons={komunIcon} title="Komunitas"></ListSidebar>
                 <ListSidebar bicons={userIcon} title="Pengguna"></ListSidebar>
