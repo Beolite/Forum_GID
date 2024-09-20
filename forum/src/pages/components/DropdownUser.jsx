@@ -46,8 +46,8 @@ function DropdownUser() {
                 <div className="flex">
                     <UserCircleIcon className='size-12'/>
                     <div className='text-left px-2'>
-                        <p className='font-semibold'>My Name</p>
-                        <p className='font-light'>@my_username</p>
+                        <p className='font-semibold'>{user.name}</p>
+                        <p className='font-light'>@{user.username}</p>
                     </div>
                 </div>
                 <div className='my-2 flex'>

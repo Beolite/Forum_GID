@@ -7,6 +7,7 @@ function PostMobileComponent(){
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [msg, setMsg] = useState("");
+    const navigate = useNavigate();
     
     const savePost = async (e) => {
         e.preventDefault();
@@ -15,7 +16,7 @@ function PostMobileComponent(){
             title: title,
             content: content,
           });
-          
+          navigate(-1)
         } catch (error) {
           if (error.response) {
             setMsg(error.response.data.msg);
@@ -56,6 +57,10 @@ function PostMobileComponent(){
                 <div className="flex justify-end text-stone-100 mr-1">
                     <button className="mx-2 text-xl font-semibold bg-[#1a3f4b] rounded-lg p-2">Simpan Draf</button>
                     <button type="submit" className="hover:scale-105 transition-transform mx-2 text-xl font-semibold bg-[#1a3f4b] active:bg-[#235464] rounded-lg p-2">Post</button>
+                    <form className="flex text-[#1a3f4b] mt-2 ml-2 lg:mr-8 mr-1 text-xl">
+                        <input type="checkbox" className="size-6 bg-slate-300 mx-1"></input>
+                        <div className="-mt-1">Post secara anonim</div>
+                    </form>
                 </div>
             </form>
 

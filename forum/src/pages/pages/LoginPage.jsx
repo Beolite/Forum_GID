@@ -19,11 +19,9 @@ function LoginPage() {
       (state) => state.auth
     );
   
-    // useEffect(() => {
-    //     if (user || isSuccess) {
-    //         navigate('/forum')
-    //     }
-    //   }, [user, isSuccess, dispatch, navigate]);
+    useEffect(() => {
+        dispatch(reset());
+      }, [user, isSuccess, dispatch, navigate]);
   
     const Auth = async (e) => {
       e.preventDefault();

@@ -6,7 +6,10 @@ import LoginPost from "./LoginPost";
 import React, { Component } from 'react';
 import {
   Bars3Icon,
+  GlobeAltIcon,
+  MagnifyingGlassCircleIcon,
   MagnifyingGlassIcon,
+  UserCircleIcon,
   UserIcon,
 } from "@heroicons/react/24/outline";
 
@@ -29,8 +32,11 @@ function Navbar() {
             </div>
             
 
-            <div id="samudra-logo" className="w-10 h-10 my-auto ml-2 lg:ml-0"><img src={logo}>
-            </img>
+            <div id="samudra-logo" className="w-10 h-10 my-auto ml-2 lg:ml-0 hidden lg:flex">
+              <img src={logo}/>
+            </div>
+            <div className="flex lg:hidden font-semibold text-emerald-300 text-2xl font-medium ml-3">
+              Samudra
             </div>
             <p className="my-auto text-xl hidden lg:flex mx-2 text-[#8fd7b7] font-medium text-2xl ">Samudra</p>
         </div>
@@ -46,7 +52,11 @@ function Navbar() {
         {/* login and post */}
         <LoginPost/>
         {/* <NavbarMobileComponent/> */}
-
+        <div className="flex lg:hidden">
+          <MagnifyingGlassIcon className=' text-stone-100 w-8 mx-1'/>
+          <UserCircleIcon className=' text-stone-100 w-8 mx-1'/>
+          <GlobeAltIcon className=' text-stone-100 w-8 mx-1'/>
+        </div>
 
     </div>
     </>

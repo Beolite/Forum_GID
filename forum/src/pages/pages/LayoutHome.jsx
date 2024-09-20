@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar"
+import NavbarHomepage from "../components/NavbarHomepage";
 import Sidebar from "../components/Sidebar"
 import Footer from "../components/Footer";
 import ForumComponent from "../components/Forum";

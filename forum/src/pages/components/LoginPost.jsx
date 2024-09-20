@@ -30,6 +30,7 @@ function LoginPost(){
     const [openBantukami,setOpenBantukami] = useState(false);
 
     const { user } = useSelector((state) => state.auth);
+    // const user = await axios.get('localhost:5713/')
     
 
     let bantuRef = useRef();
@@ -87,10 +88,10 @@ function LoginPost(){
             <div id="bahasa" className="text-stone-100 w-10 h-10 my-auto ml-4 hover:bg-black hover:bg-opacity-10 pl-1 rounded-lg cursor-grab">
                 <GlobeAltIcon className="size-8 mt-1.5"/>
             </div>
-            <button id="post" className="bg-stone-100 hover:bg-[#8fd7b7] text-gray-600 w-28 h-10 my-auto ml-4 rounded-full flex justify-center align-middle cursor-grab">
+            <Link to="/post" id="post" className="bg-stone-100 hover:bg-[#8fd7b7] text-gray-600 w-28 h-10 my-auto ml-4 rounded-full flex justify-center align-middle cursor-grab">
                 <p className="text-2xl font-semibold my-auto">Post</p>
                 <PlusCircleIcon className="mt-1.5 size-8 ml-2"/>
-            </button>
+            </Link>
         </div>
     )
 }
